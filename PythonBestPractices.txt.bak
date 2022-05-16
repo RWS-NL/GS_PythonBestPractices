@@ -3,13 +3,13 @@
 ## 1. Introduction to Python
 Python is a high-level, interpreted, general-purpose programming language. It was created by Guido van Rossum, and released in 1991.
 
-### *1.1. Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )*
+### 1.1. Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )
 
 - Python was designed for readability, and has some similarities to the English language with influence from mathematics.
 - Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.
 - Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.
 
-### *1.2. When do we use Python?*
+### 1.2. When do we use Python?
 
 - Quick data model transformations directly in a database (ESRI ArcPy toolbox)
 
@@ -21,14 +21,7 @@ Python is a high-level, interpreted, general-purpose programming language. It wa
 3.6.5
 
 *Which Python version is currently installed in all environments? (Asked Erik) Always use ArcGIS Python*
-
-
-## 4. Naming convention
-
-### *4.1 Script*
-### *4.2 Functions and classes*
-
-## 5. Documentation in Python
+## 4. Documentation in Python
 Add the following snippet to the beginning of your Python script:
 ```
 """
@@ -44,7 +37,7 @@ History:			19/04/2022 cruzg: Initial version
 """
 ```
 
-###  *5.1. Functions & Classes*
+###  4.1. Functions & Classes
 When a function/class is created, add the following snippet at the beginning as documentation:
 ```
 def TestFunction(Var1, Var2):
@@ -65,7 +58,7 @@ def TestFunction(Var1, Var2):
 	return(Var3)
 ```
 
-## 6. Python IDE
+## 5. Python IDE
 PyCharm 2021.2.1. (Community edition) with Python 3.6.x from ArcGIS Pro 2.2.x
 
 Location of Python executable: "D:\Apps\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe"
