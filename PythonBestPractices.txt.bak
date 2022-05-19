@@ -3,15 +3,16 @@
 ## 1. Introduction to Python
 Python is a high-level, interpreted, general-purpose programming language. It was created by Guido van Rossum, and released in 1991.
 
-### 1.1. Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )
+### *1.1. Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )*
 
 - Python was designed for readability, and has some similarities to the English language with influence from mathematics.
 - Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.
 - Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.
 
-### 1.2. When do we use Python?
+### *1.2. When do we use Python?*
 
 - Quick data model transformations directly in a database (ESRI ArcPy toolbox)
+- Add more reasons here!!!!!
 
 
 ## 2. Follow [PEP8](https://peps.python.org/pep-0008/) Guidelines
@@ -21,7 +22,21 @@ Python is a high-level, interpreted, general-purpose programming language. It wa
 3.6.5
 
 *Which Python version is currently installed in all environments? (Asked Erik) Always use ArcGIS Python*
-## 4. Documentation in Python
+
+
+## 4. Naming convention (PEP8 based, [source](https://realpython.com/python-pep8/#naming-conventions))
+
+| Type     | Naming Convention                                                                                                       | Examples                                |   |   |
+|----------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------|---|---|
+| Function | Use a lowercase word or words. <br>Separate words by underscores to improve readability.                                | function, my_function                   |   |   |
+| Variable | Use a lowercase single letter, word, or words.<br>Separate words with underscores to improve readability.               | x, var, my_variable                     |   |   |
+| Class    | Start each word with a capital letter. <br>Do not separate words with underscores. <br>This style is called camel case. | Model, MyClass                          |   |   |
+| Method   | Use a lowercase word or words. <br>Separate words with underscores to improve readability.                              | class_method, method                    |   |   |
+| Constant | Use an uppercase single letter, word, or words. <br>Separate words with underscores to improve readability.             | CONSTANT, MY_CONSTANT, MY_LONG_CONSTANT |   |   |
+| Module   | Use a short, lowercase word or words. <br>Separate words with underscores to improve readability.                       | module.py, my_module.py                 |   |   |
+| Package  | Use a short, lowercase word or words. <br>Do not separate words with underscores.                                       | package, mypackage                      |   |   |
+
+## 5. Documentation in Python
 Add the following snippet to the beginning of your Python script:
 ```
 """
@@ -37,7 +52,7 @@ History:			19/04/2022 cruzg: Initial version
 """
 ```
 
-###  4.1. Functions & Classes
+###  *5.1. Functions & Classes*
 When a function/class is created, add the following snippet at the beginning as documentation:
 ```
 def TestFunction(Var1, Var2):
@@ -58,7 +73,7 @@ def TestFunction(Var1, Var2):
 	return(Var3)
 ```
 
-## 5. Python IDE
+## 6. Python IDE
 PyCharm 2021.2.1. (Community edition) with Python 3.6.x from ArcGIS Pro 2.2.x
 
 Location of Python executable: "D:\Apps\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe"
