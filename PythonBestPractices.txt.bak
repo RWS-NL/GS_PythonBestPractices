@@ -14,6 +14,7 @@ Python is a high-level, interpreted, general-purpose programming language. It wa
 - Quick data model transformations directly in a database (ESRI ArcPy toolbox)
 	- Use FME for data translation workflows
 - Database migrations (SDE) (including domainlists, attribute/spatial indexes, subtypes, etc)
+- Creation of generic scripts for repetitive tasks
 	
 Add more reasons here!!!!!
 

@@ -82,6 +82,9 @@ PyCharm 2021.2.1. (Community edition) with Python 3.6.x from ArcGIS Pro 2.2.x
 
 Location of Python executable: "D:\Apps\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe"
 
+## 7. Folder structure of Python Application
+...
+
 ----------------------------------------------------------
 ## Handy Python snippets
 
