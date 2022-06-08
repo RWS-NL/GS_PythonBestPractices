@@ -44,7 +44,7 @@ project_root/
 ```
 
 > Add the following snippet (Docstring) to the beginning of your Python script:
-```
+```python
 """
 -------------------------------------------------------------------------------
 Name:				Name of Py script
@@ -62,7 +62,7 @@ Further edits should be documented when commiting to GitHub.
 
 ###  *Functions & Classes*
 When a function/class is created, add the following snippet at the beginning as documentation:
-```
+```python
 def my_function(Var1, Var2):
 	"""
 	-------------------------------------------------------------------------------
@@ -88,10 +88,16 @@ Usually, messages from Python script are printed in the console instead of in a 
 ```python
 import logging
 
-logging.basicConfig(filename='Testgaby.log', # Name of the logfile
-                    filemode='w', # Which filemode is applied. W = overwrite existing logfile
-                    format='%(name)s - %(levelname)s - %(message)s', # Format of logging rows
-                    level= logging.WARN) # Which level of logging is the threshold
+# filename = Name of the logfile
+# filemode = Which filemode is applied. 
+# 		W = overwrite existing logfile
+# format = Format of logging rows
+# level = Which level of logging is the threshold
+
+logging.basicConfig(filename='Testgaby.log', 
+		filemode='w', 
+		format='%(name)s - %(levelname)s - %(message)s', 
+		level= logging.WARN) 
 					
 logging.info('This will not get logged to a file')
 logging.warn('This will get logged to a file')
