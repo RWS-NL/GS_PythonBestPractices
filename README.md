@@ -140,11 +140,11 @@ Try not make your code lines too long. The readibility and clarity of your code 
 
 ```python
 #### Long path names
-bad_var = r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathisverylong\subdir\file.txt"
+bad_var = r"D:\Users\test-files\mock-up\path-is-very-long\subdir\another-dir-in-a-sub-dir\file.txt"
 
 good_var = os.path.join(
-            r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen",
-            r"\mock-up\pathisverylong\subdir",
+            r"D:\Users\test-files\mock-up\path-is-very-long",
+            r"subdir\another-dir-in-a-sub-dir",
             r"file.txt")
 			
 #### Calling function/modules with variables
