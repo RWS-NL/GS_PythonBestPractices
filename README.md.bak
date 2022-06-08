@@ -3,13 +3,13 @@
 ## 1. Introduction to Python
 Python is a high-level, interpreted, general-purpose programming language. It was created by Guido van Rossum, and released in 1991.
 
-### *Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )*
+### 1.1. Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )
 
 - Python was designed for readability, and has some similarities to the English language with influence from mathematics.
 - Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.
 - Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.
 
-### *When do we use Python?*
+### 1.2. When do we use Python?
 
 - Scripting - ArcGis API for Python
 - To automate the Gis Content (ArcGis Entterprise, Data Publishing, Deployment)
@@ -18,14 +18,12 @@ Python is a high-level, interpreted, general-purpose programming language. It wa
 
 
 ## 2. Follow [PEP8](https://peps.python.org/pep-0008/) Guidelines
- PEP8 is a document that provides guidelines and best practices on how to write Python code. It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan. The primary focus of PEP 8 is to improve the readability and consistency of Python code.
- 
- In the sections below, the most important guidelines are described below, enriched with what's currently applied in Geostenen.
- 
+*Which guidelines are must-haves to include in the wiki?*
 
 ## 3. Python version
-In Geostenen, we have older applications that rely on the ArcGIS Python 2.7 version. All newer application should use ArcGIS Python 3.6.5.
+3.6.5
 
+*Which Python version is currently installed in all environments? (Asked Erik) Always use ArcGIS Python*
 ## 4. Documentation in Python
 > The general layout of the project and its documentation should be as follows:
 ```
@@ -57,13 +55,12 @@ History:			19/04/2022 cruzg: Initial version
 -------------------------------------------------------------------------------
 """
 ```
-Further edits should be documented when commiting to GitHub.
 
 
-###  *Functions & Classes*
+###  4.1. Functions & Classes
 When a function/class is created, add the following snippet at the beginning as documentation:
 ```
-def my_function(Var1, Var2):
+def TestFunction(Var1, Var2):
 	"""
 	-------------------------------------------------------------------------------
 	 Input, datatype, explanation:	
@@ -80,38 +77,6 @@ def my_function(Var1, Var2):
 	
 	return(Var3)
 ```
-By giving the information above, each developer should know what the purpose, input and output are for each function or class.
-
-### *Creating a logfile*
-Usually, messages from Python script are printed in the console instead of in a seperate logging file. The module logging gives developers all the tools to write a logfile after running their code. The snippet below enables writing a logfile in the same directory as the code during its run.
-
-```
-import logging
-
-logging.basicConfig(filename='Testgaby.log', # Name of the logfile
-                    filemode='w', # Which filemode is applied. W = overwrite existing logfile
-                    format='%(name)s - %(levelname)s - %(message)s', # Format of logging rows
-                    level= logging.WARN) # Which level of logging is the threshold
-					
-logging.info('This will not get logged to a file')
-logging.warn('This will get logged to a file')
-
-```
-
-The snippet above generates the log file content below:
-
-
-*root - WARNING - This will get logged to a file*
-
-
-
-
-
-
-
-
-
-
 
 ## 5. Python IDE
 PyCharm 2021.2.1. (Community edition) with Python 3.6.x from ArcGIS Pro 2.2.x
@@ -121,65 +86,9 @@ Location of Python executable: "D:\Apps\ArcGIS\Pro\bin\Python\envs\arcgispro-py3
 Visual Studio Code (Recommend): https://code.visualstudio.com/
 
 
-
-
-
-
-
-
-
-
-
-## 6. Code Lay-Out
-The PEP8 guidelines describe multiple ways to make the your code more readible and accesible for adjustments from other developers.
-
-### Maximum line length
-Try not make your code lines too long. The readibility and clarity of your code will be affected by having code lines exceed a certain length. According to the PEP8 guides, the code lines need to fit a single screen without side scrolling. Below, some examples are giving how to combat long code lines
-
-```
-#### Long path names
-bad_var = fcpath =  r"\\ad.rws.nl\t-dfs01\Appsdata\GEOstenen_Config\SDE_connecties\ArcSDE_10.3.1\BKN\TBKN\owners\BKN_NN@TBKN.sde\BKN_NN.BeheerkaartNat\BKN_NN.lKunstwerk"
-
-good_var = os.path.join(
-            r"\\ad.rws.nl\t-dfs01\Appsdata\GEOstenen_Config",
-	    r"SDE_connecties\ArcSDE_10.3.1\BKN",
-            r"TBKN\owners\BKN_NN@TBKN.sde",
-            r"BKN_NN.BeheerkaartNat\BKN_NN.lKunstwerk")
-			
-#### Calling function/modules with variables
-bad_var = arcpy.management.FeatureCompare(in_base_features = sourceDB, in_test_features = targetDB, sort_field = "OBJECTID", continue_compare = continue_compare,out_compare_file = "continue_compare")
-
-good_var = arcpy.management.FeatureCompare(
-			in_base_features = sourceDB,
-			in_test_features = targetDB,
-			sort_field = "OBJECTID",
-			continue_compare = continue_compare,
-			out_compare_file = "continue_compare")
-
-#### Defining functions/classes
-def my_bad_function(var1, var2, var3 = "default", var5, var6):
-	....
-
-def my_good_function(var1, var2,
-		     var3 = "default",
-		     var5, var6):
-	....
-
-```
-
-
-
-
-
-
-
-
-
-
-
 ----------------------------------------------------------
 
-## 7. Config file: What's the best practice using a settings file in Python?
+## 6. Config file: What's the best practice using a settings file in Python?
 The most common and standardized format is JSON. A good configuration file should meet at least these 3 criteria:
 
 - Easy to read and edit: It should be text-based and structured in such a way that is easy to understand. Even non-developers should be able to read.
