@@ -3,7 +3,7 @@
 ## 1. Introduction to Python
 Python is a high-level, interpreted, general-purpose programming language. It was created by Guido van Rossum, and released in 1991.
 
-### *Comparison to other languages ( [source](https://www.w3schools.com/python/python_intro.asp) )*
+### *Comparison to other languages ([source](https://www.w3schools.com/python/python_intro.asp))*
 
 - Python was designed for readability, and has some similarities to the English language with influence from mathematics.
 - Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.
@@ -37,10 +37,6 @@ project_root/
 ├── test_data
 ├── release
 ├── README
-```
-> Commenting: In general, commenting is describing your code to/for developers
-```
-# Code tells you how; Comments tell you why.
 ```
 
 > Add the following snippet (Docstring) to the beginning of your Python script:
@@ -82,18 +78,19 @@ def my_function(Var1, Var2):
 By giving the information above, each developer should know what the purpose, input and output are for each function or class.
 
 ### *Creating a logfile*
-Usually, messages from Python script are printed in the console instead of in a seperate logging file. The module logging gives developers all the tools to write a logfile after running their code. The snippet below enables writing a logfile in the same directory as the code during its run.
+Usually, messages from Python script are printed in the console instead of in a seperate logging file. The module *logging* gives developers all the tools to write a logfile after running their code. The snippet below enables writing a logfile in the same directory as the code during its run.
 
 ```python
 import logging
+"""
+filename = Name of the logfile
+filemode = Which filemode is applied. 
+ 		W = overwrite existing logfile
+format = Format of logging rows
+level = Which level of logging is the threshold
+"""
 
-# filename = Name of the logfile
-# filemode = Which filemode is applied. 
-# 		W = overwrite existing logfile
-# format = Format of logging rows
-# level = Which level of logging is the threshold
-
-logging.basicConfig(filename='Testgaby.log', 
+logging.basicConfig(filename='Test.log', 
 		filemode='w', 
 		format='%(name)s - %(levelname)s - %(message)s', 
 		level= logging.WARN) 
@@ -143,11 +140,11 @@ Try not make your code lines too long. The readibility and clarity of your code 
 
 ```python
 #### Long path names
-bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathis verylong\subdir\file.txt"
+bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathisverylong\subdir\file.txt"
 
 good_var = os.path.join(
             r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen",
-            r"\mock-up\pathis verylong\subdir",
+            r"\mock-up\pathisverylong\subdir",
             r"file.txt")
 			
 #### Calling function/modules with variables
@@ -178,8 +175,9 @@ Whenever you want to clarify your code, consider placing comments above the line
 # Simple comment to explain actions below
 # Developers' name is defined.
 dev_name = "John Doe"
+```
 
-
+```python
 """
 Docstring
 The standard deviation is calculated by taking the root of 
@@ -187,14 +185,17 @@ the variance.
 To calculate the variance, the mean of your sample is needed.
 """
 
-test_list = [3, 6, 9, 11, 13]
-print("The original list : " + str(test_list))
-mean = sum(test_list) / len(test_list)
-variance = sum([((x - mean) ** 2)
-    for x in test_list]) / len(test_list)
-res = variance ** 0.5
-print("Standard deviation of sample is : " + str(res))
+import math
 
+# values (must be floats!)
+xs = [0.5,0.7,0.3,0.2]   
+
+  
+mean = sum(xs) / len(xs) 
+var  = sum(pow(x-mean,2) for x in xs) / len(xs)
+
+# standard deviation
+std  = math.sqrt(var)  
 ```
 
 
@@ -207,7 +208,7 @@ print("Standard deviation of sample is : " + str(res))
 
 
 
-----------------------------------------------------------
+
 
 ## 7. Config file: What's the best practice using a settings file in Python?
 The most common and standardized format is JSON. A good configuration file should meet at least these 3 criteria:

@@ -143,11 +143,11 @@ Try not make your code lines too long. The readibility and clarity of your code 
 
 ```python
 #### Long path names
-bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathis verylong\subdir\file.txt"
+bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathisverylong\subdir\file.txt"
 
 good_var = os.path.join(
             r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen",
-            r"\mock-up\pathis verylong\subdir",
+            r"\mock-up\pathisverylong\subdir",
             r"file.txt")
 			
 #### Calling function/modules with variables
@@ -162,12 +162,38 @@ good_var = arcpy.management.FeatureCompare(
 
 #### Defining functions/classes
 def my_bad_function(var1, var2, var3 = "default", var5, var6):
-	....
+	print("Bad formatting!")
 
 def my_good_function(var1, var2,
 		     var3 = "default",
 		     var5, var6):
-	....
+	print("Great formatting!")
+
+```
+
+### Commenting in Python
+Whenever you want to clarify your code, consider placing comments above the line to prevent long code lines. If you comment exceeds one line, then consider placing your comments in a docstring.
+
+```python
+# Simple comment to explain actions below
+# Developers' name is defined.
+dev_name = "John Doe"
+
+
+"""
+Docstring
+The standard deviation is calculated by taking the root of 
+the variance.
+To calculate the variance, the mean of your sample is needed.
+"""
+
+test_list = [3, 6, 9, 11, 13]
+print("The original list : " + str(test_list))
+mean = sum(test_list) / len(test_list)
+variance = sum([((x - mean) ** 2)
+    for x in test_list]) / len(test_list)
+res = variance ** 0.5
+print("Standard deviation of sample is : " + str(res))
 
 ```
 
