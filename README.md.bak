@@ -44,7 +44,7 @@ project_root/
 ```
 
 > Add the following snippet (Docstring) to the beginning of your Python script:
-```
+```python
 """
 -------------------------------------------------------------------------------
 Name:				Name of Py script
@@ -53,7 +53,6 @@ Author:				User(ADM account)
 
 Created:			Date of creation
 History:			19/04/2022 cruzg: Initial version
-											09/05/2022 cruzg: ....
 -------------------------------------------------------------------------------
 """
 ```
@@ -62,7 +61,7 @@ Further edits should be documented when commiting to GitHub.
 
 ###  *Functions & Classes*
 When a function/class is created, add the following snippet at the beginning as documentation:
-```
+```python
 def my_function(Var1, Var2):
 	"""
 	-------------------------------------------------------------------------------
@@ -76,7 +75,7 @@ def my_function(Var1, Var2):
 	-------------------------------------------------------------------------------
 	"""
 	
-	PythonCode
+	print("This function is amazing!")
 	
 	return(Var3)
 ```
@@ -88,10 +87,16 @@ Usually, messages from Python script are printed in the console instead of in a 
 ```python
 import logging
 
-logging.basicConfig(filename='Testgaby.log', # Name of the logfile
-                    filemode='w', # Which filemode is applied. W = overwrite existing logfile
-                    format='%(name)s - %(levelname)s - %(message)s', # Format of logging rows
-                    level= logging.WARN) # Which level of logging is the threshold
+# filename = Name of the logfile
+# filemode = Which filemode is applied. 
+# 		W = overwrite existing logfile
+# format = Format of logging rows
+# level = Which level of logging is the threshold
+
+logging.basicConfig(filename='Testgaby.log', 
+		filemode='w', 
+		format='%(name)s - %(levelname)s - %(message)s', 
+		level= logging.WARN) 
 					
 logging.info('This will not get logged to a file')
 logging.warn('This will get logged to a file')
@@ -138,13 +143,12 @@ Try not make your code lines too long. The readibility and clarity of your code 
 
 ```python
 #### Long path names
-bad_var = fcpath =  r"\\ad.rws.nl\t-dfs01\Appsdata\GEOstenen_Config\SDE_connecties\ArcSDE_10.3.1\BKN\TBKN\owners\BKN_NN@TBKN.sde\BKN_NN.BeheerkaartNat\BKN_NN.lKunstwerk"
+bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathis verylong\subdir\file.txt"
 
 good_var = os.path.join(
-            r"\\ad.rws.nl\t-dfs01\Appsdata\GEOstenen_Config",
-	    r"SDE_connecties\ArcSDE_10.3.1\BKN",
-            r"TBKN\owners\BKN_NN@TBKN.sde",
-            r"BKN_NN.BeheerkaartNat\BKN_NN.lKunstwerk")
+            r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen",
+            r"\mock-up\pathis verylong\subdir",
+            r"file.txt")
 			
 #### Calling function/modules with variables
 bad_var = arcpy.management.FeatureCompare(in_base_features = sourceDB, in_test_features = targetDB, sort_field = "OBJECTID", continue_compare = continue_compare,out_compare_file = "continue_compare")
