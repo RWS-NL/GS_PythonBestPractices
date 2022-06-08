@@ -83,9 +83,63 @@ PyCharm 2021.2.1. (Community edition) with Python 3.6.x from ArcGIS Pro 2.2.x
 
 Location of Python executable: "D:\Apps\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe"
 
-----------------------------------------------------------
-## Handy Python snippets
+Visual Studio Code (Recommend): https://code.visualstudio.com/
 
-### 
+
+----------------------------------------------------------
+
+## 6. Config file: What's the best practice using a settings file in Python?
+The most common and standardized format is JSON. A good configuration file should meet at least these 3 criteria:
+
+- Easy to read and edit: It should be text-based and structured in such a way that is easy to understand. Even non-developers should be able to read.
+- Allow comments: Configuration file is not something that will be only read by developers. It is extremely important in production when non-developers try to understand the process and modify the software behavior. Writing comments is a way to quickly explain certain things, thus making the config file more expressive.
+- Easy to deploy: Configuration file should be accepted by all the operating systems and environments. It should also be easily shipped to the server via a CDaaS pipeline.
+
+Quick Start
+
+Let’s take a very basic configuration file that looks like this:
+
+config.py (config - settings file)
+
+```python
+	# database connection
+	database = dict(
+		username = 'db_username',
+		password = 'db_password',
+		host = '127.0.0.1',
+		port = '5432',
+		db = 'db_name'
+	)
+	# application settings
+	app = dict(
+		envirement = 'test',
+		engine = dict(
+			debug = True,
+			displau = False,
+    )
+)
+```
+
+app.py (application file)
+
+```python
+	# import config - settings
+	import config
+
+	# get db username
+	db_username = config.database['username']
+	print(f'db username: {db_username}')
+
+	# get db password
+	db_password = config.database['password']
+	print(f'db password: {db_password}')
+```
+
+output result should be like this:
+
+```
+	db username: db_username
+	db password: db_password
+```
 
 
