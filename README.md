@@ -85,7 +85,7 @@ By giving the information above, each developer should know what the purpose, in
 ### *Creating a logfile*
 Usually, messages from Python script are printed in the console instead of in a seperate logging file. The module logging gives developers all the tools to write a logfile after running their code. The snippet below enables writing a logfile in the same directory as the code during its run.
 
-```
+```python
 import logging
 
 logging.basicConfig(filename='Testgaby.log', # Name of the logfile
@@ -136,7 +136,7 @@ The PEP8 guidelines describe multiple ways to make the your code more readible a
 ### Maximum line length
 Try not make your code lines too long. The readibility and clarity of your code will be affected by having code lines exceed a certain length. According to the PEP8 guides, the code lines need to fit a single screen without side scrolling. Below, some examples are giving how to combat long code lines
 
-```
+```python
 #### Long path names
 bad_var = fcpath =  r"\\ad.rws.nl\t-dfs01\Appsdata\GEOstenen_Config\SDE_connecties\ArcSDE_10.3.1\BKN\TBKN\owners\BKN_NN@TBKN.sde\BKN_NN.BeheerkaartNat\BKN_NN.lKunstwerk"
 
