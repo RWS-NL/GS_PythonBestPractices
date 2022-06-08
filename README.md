@@ -208,7 +208,6 @@ config.py (config - settings file)
 			debug = True,
 			displau = False,
     )
-)
 ```
 
 app.py (application file)
