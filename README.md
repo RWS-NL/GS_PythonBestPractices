@@ -140,7 +140,7 @@ Try not make your code lines too long. The readibility and clarity of your code 
 
 ```python
 #### Long path names
-bad_var = fcpath =  r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathisverylong\subdir\file.txt"
+bad_var = r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen\mock-up\pathisverylong\subdir\file.txt"
 
 good_var = os.path.join(
             r"\\ad.rws.nl\test-dfs01\Appsdata\GEOstenen",
